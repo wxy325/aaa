@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef NS_ENUM(NSUInteger, WXYUserType) { WXYUserTypeAdmin = 1, WXYUserTypeWorker = 2, WXYUserTypeActivityAdmin = 3 };
-@interface UserInfo : NSObject<NSCoding, NSCopying>
+
+@interface UserInfo : NSObject
+//<NSCoding, NSCopying>
 
 @property (strong, nonatomic) NSString* userName;
-@property (strong, nonatomic) NSString* sessionId;
-@property (strong, nonatomic) NSNumber* roleId;
+@property (strong, nonatomic) NSString* password;
+@property (strong, nonatomic) NSString* headPhotoUrl;
+@property (strong, nonatomic) NSString* coverUrl;
+@property (strong, nonatomic) NSString* location;
 
 - (NSDictionary*)toDict;
 - (id)initWithDict:(NSDictionary*)dict;

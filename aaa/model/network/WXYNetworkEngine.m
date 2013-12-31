@@ -67,7 +67,8 @@
     NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
     if (fLogin)
     {
-        [params setObject:SHARE_SETTING_MANAGER.currentUserInfo.sessionId forKey:@"sessionid"];
+        [params setObject:SHARE_SETTING_MANAGER.currentUserInfo.userName forKey:@"user_name"];
+        [params setObject:SHARE_SETTING_MANAGER.currentUserInfo.password forKey:@"password"];
     }
 //    if (userInfo)
 //    {

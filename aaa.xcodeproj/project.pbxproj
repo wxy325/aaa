@@ -14,7 +14,6 @@
 		18471328187303DC00A72F4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18471327187303DC00A72F4B /* main.m */; };
 		1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847132B187303DC00A72F4B /* WXYAppDelegate.m */; };
 		1847132F187303DC00A72F4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1847132D187303DC00A72F4B /* Main.storyboard */; };
-		18471332187303DC00A72F4B /* WXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18471331187303DC00A72F4B /* WXYViewController.m */; };
 		18471334187303DC00A72F4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18471333187303DC00A72F4B /* Images.xcassets */; };
 		1847133B187303DD00A72F4B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1847133A187303DD00A72F4B /* XCTest.framework */; };
 		1847133C187303DD00A72F4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1847131B187303DC00A72F4B /* Foundation.framework */; };
@@ -52,6 +51,14 @@
 		184713C41873059200A72F4B /* exclamationmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184713C01873059200A72F4B /* exclamationmark@2x.png */; };
 		184713C61873068400A72F4B /* WXYNetworkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713C51873068400A72F4B /* WXYNetworkTest.m */; };
 		184713CA187306E400A72F4B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184713C9187306E400A72F4B /* GHUnitIOS.framework */; };
+		184713D0187311C300A72F4B /* WXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713CF187311C300A72F4B /* WXYViewController.m */; };
+		184713D3187311CC00A72F4B /* WXYNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713D2187311CC00A72F4B /* WXYNoticeViewController.m */; };
+		184713D818731B7400A72F4B /* WXYHomeCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713D718731B7400A72F4B /* WXYHomeCoverView.m */; };
+		184713DA18731B8300A72F4B /* WXYHomeCoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184713D918731B8300A72F4B /* WXYHomeCoverView.xib */; };
+		184713DD18731DAF00A72F4B /* WXYCardTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713DC18731DAF00A72F4B /* WXYCardTextCell.m */; };
+		184713E218731DC800A72F4B /* WXYCardTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184713E118731DC800A72F4B /* WXYCardTextCell.xib */; };
+		184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713E618731DEF00A72F4B /* WXYCardCommentView.m */; };
+		184713E918731DFD00A72F4B /* WXYCardCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184713E818731DFD00A72F4B /* WXYCardCommentView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +90,6 @@
 		1847132A187303DC00A72F4B /* WXYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXYAppDelegate.h; sourceTree = "<group>"; };
 		1847132B187303DC00A72F4B /* WXYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXYAppDelegate.m; sourceTree = "<group>"; };
 		1847132E187303DC00A72F4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18471330187303DC00A72F4B /* WXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXYViewController.h; sourceTree = "<group>"; };
-		18471331187303DC00A72F4B /* WXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXYViewController.m; sourceTree = "<group>"; };
 		18471333187303DC00A72F4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18471339187303DD00A72F4B /* aaaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aaaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1847133A187303DD00A72F4B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -153,6 +158,19 @@
 		184713C01873059200A72F4B /* exclamationmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exclamationmark@2x.png"; sourceTree = "<group>"; };
 		184713C51873068400A72F4B /* WXYNetworkTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYNetworkTest.m; sourceTree = "<group>"; };
 		184713C9187306E400A72F4B /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		184713CE187311C300A72F4B /* WXYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYViewController.h; sourceTree = "<group>"; };
+		184713CF187311C300A72F4B /* WXYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYViewController.m; sourceTree = "<group>"; };
+		184713D1187311CC00A72F4B /* WXYNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYNoticeViewController.h; sourceTree = "<group>"; };
+		184713D2187311CC00A72F4B /* WXYNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYNoticeViewController.m; sourceTree = "<group>"; };
+		184713D618731B7400A72F4B /* WXYHomeCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYHomeCoverView.h; sourceTree = "<group>"; };
+		184713D718731B7400A72F4B /* WXYHomeCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYHomeCoverView.m; sourceTree = "<group>"; };
+		184713D918731B8300A72F4B /* WXYHomeCoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXYHomeCoverView.xib; sourceTree = "<group>"; };
+		184713DB18731DAF00A72F4B /* WXYCardTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYCardTextCell.h; sourceTree = "<group>"; };
+		184713DC18731DAF00A72F4B /* WXYCardTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardTextCell.m; sourceTree = "<group>"; };
+		184713E118731DC800A72F4B /* WXYCardTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXYCardTextCell.xib; sourceTree = "<group>"; };
+		184713E518731DEF00A72F4B /* WXYCardCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYCardCommentView.h; sourceTree = "<group>"; };
+		184713E618731DEF00A72F4B /* WXYCardCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardCommentView.m; sourceTree = "<group>"; };
+		184713E818731DFD00A72F4B /* WXYCardCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXYCardCommentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +231,8 @@
 		18471321187303DC00A72F4B /* aaa */ = {
 			isa = PBXGroup;
 			children = (
+				184713D418731B6200A72F4B /* view */,
+				184713CC1873118900A72F4B /* controller */,
 				184713B91873059200A72F4B /* resource */,
 				184713B61873053700A72F4B /* other */,
 				184713511873042300A72F4B /* model */,
@@ -221,8 +241,6 @@
 				1847132A187303DC00A72F4B /* WXYAppDelegate.h */,
 				1847132B187303DC00A72F4B /* WXYAppDelegate.m */,
 				1847132D187303DC00A72F4B /* Main.storyboard */,
-				18471330187303DC00A72F4B /* WXYViewController.h */,
-				18471331187303DC00A72F4B /* WXYViewController.m */,
 				18471333187303DC00A72F4B /* Images.xcassets */,
 				18471322187303DC00A72F4B /* Supporting Files */,
 			);
@@ -467,6 +485,49 @@
 			path = hud;
 			sourceTree = "<group>";
 		};
+		184713CC1873118900A72F4B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				184713CD187311C300A72F4B /* notice */,
+				184713CE187311C300A72F4B /* WXYViewController.h */,
+				184713CF187311C300A72F4B /* WXYViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		184713CD187311C300A72F4B /* notice */ = {
+			isa = PBXGroup;
+			children = (
+				184713D1187311CC00A72F4B /* WXYNoticeViewController.h */,
+				184713D2187311CC00A72F4B /* WXYNoticeViewController.m */,
+			);
+			path = notice;
+			sourceTree = "<group>";
+		};
+		184713D418731B6200A72F4B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				184713D518731B6200A72F4B /* cell */,
+				184713D618731B7400A72F4B /* WXYHomeCoverView.h */,
+				184713D718731B7400A72F4B /* WXYHomeCoverView.m */,
+				184713D918731B8300A72F4B /* WXYHomeCoverView.xib */,
+				184713E518731DEF00A72F4B /* WXYCardCommentView.h */,
+				184713E618731DEF00A72F4B /* WXYCardCommentView.m */,
+				184713E818731DFD00A72F4B /* WXYCardCommentView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		184713D518731B6200A72F4B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				184713DB18731DAF00A72F4B /* WXYCardTextCell.h */,
+				184713DC18731DAF00A72F4B /* WXYCardTextCell.m */,
+				184713E118731DC800A72F4B /* WXYCardTextCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,8 +621,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184713DA18731B8300A72F4B /* WXYHomeCoverView.xib in Resources */,
 				184713C31873059200A72F4B /* exclamationmark.png in Resources */,
+				184713E918731DFD00A72F4B /* WXYCardCommentView.xib in Resources */,
 				184713C41873059200A72F4B /* exclamationmark@2x.png in Resources */,
+				184713E218731DC800A72F4B /* WXYCardTextCell.xib in Resources */,
 				18471334187303DC00A72F4B /* Images.xcassets in Resources */,
 				184713C11873059200A72F4B /* checkmark.png in Resources */,
 				18471326187303DC00A72F4B /* InfoPlist.strings in Resources */,
@@ -589,14 +653,17 @@
 				184713B01873042300A72F4B /* NSDictionary+noNilValueForKey.m in Sources */,
 				18471328187303DC00A72F4B /* main.m in Sources */,
 				1847139A1873042300A72F4B /* BrandInfo.m in Sources */,
+				184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */,
 				1847139D1873042300A72F4B /* ShopInfo.m in Sources */,
 				184713A21873042300A72F4B /* WXYNetworkEngine.m in Sources */,
+				184713D818731B7400A72F4B /* WXYHomeCoverView.m in Sources */,
 				184713AD1873042300A72F4B /* MKNetworkEngine.m in Sources */,
 				184713A11873042300A72F4B /* WXYError.m in Sources */,
 				184713A81873042300A72F4B /* NSDate+RFC1123.m in Sources */,
+				184713D0187311C300A72F4B /* WXYViewController.m in Sources */,
+				184713DD18731DAF00A72F4B /* WXYCardTextCell.m in Sources */,
 				184713991873042300A72F4B /* ActivityShopEntity.m in Sources */,
 				1847139F1873042300A72F4B /* WXYSettingManager.m in Sources */,
-				18471332187303DC00A72F4B /* WXYViewController.m in Sources */,
 				184713AA1873042300A72F4B /* NSString+MKNetworkKitAdditions.m in Sources */,
 				184713981873042300A72F4B /* ActivityInfo.m in Sources */,
 				1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */,
@@ -604,6 +671,7 @@
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,
 				184713AB1873042300A72F4B /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				184713AC1873042300A72F4B /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				184713D3187311CC00A72F4B /* WXYNoticeViewController.m in Sources */,
 				184713A71873042300A72F4B /* NSData+MKBase64.m in Sources */,
 				184713A01873042300A72F4B /* WXYDataModel.m in Sources */,
 				1847139B1873042300A72F4B /* LocationInfo.m in Sources */,
