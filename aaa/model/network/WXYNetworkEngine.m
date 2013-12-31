@@ -15,6 +15,9 @@
 //#define HOST_NAME @"10.60.42.200:12357/YimoERP"
 #define HOST_NAME @"192.168.1.100/hanjie"
 #define URL_USER_LOGIN @"user_login.php"
+#define URL_USER_REGISTER @"user_register.php"
+#define URL_USER_INFO_UPDATE @"user_info_update.php"
+#define URL_USER_COVER_UPDATE @"user_cover_update.php"
 
 
 @interface WXYNetworkEngine ()
@@ -113,6 +116,65 @@
             errorBlock(error);
         }
     }];
+    return op;
+}
+
+- (MKNetworkOperation*)userRegisterWithname:(NSString*)userName familyId:(NSNumber*)familyId password:(NSString*)password onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    op = [self startOperationWithPath:URL_USER_REGISTER needLogin:NO paramers:@{@"user_name":userName, @"family_id":familyId, @"family_password":password} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)userInfoUpdateProvince:(NSString*)province city:(NSString*)city screenName:(NSString*)screenName onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    op = [self startOperationWithPath:URL_USER_INFO_UPDATE needLogin:YES paramers:@{@"province":province, @"city":city, @"screen_name":screenName} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)userCoverUpdate:(UIImage*)newCover onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    NSData *imageData = UIImageJPEGRepresentation(newCover, 0.5);
+    NSDictionary* imageDict = @{@"image":imageData};
+    op = [self startOperationWithPath:URL_USER_COVER_UPDATE needLogin:YES paramers:@{@"type":@"jpg"} dataDict:imageDict onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
     return op;
 }
 @end
