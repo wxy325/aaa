@@ -305,7 +305,7 @@
             c.cardId = @(cardIdStr.longLongValue);
             c.content = [dict noNilValueForKey:@"content"];
             c.imageUrl = [dict noNilValueForKey:@"image_url"];
-            c.createAt = [dict noNilValueForKey:@"create_at"];
+            c.createAt = [dict noNilValueForKey:@"creat_at"];
             NSDictionary* uDict = [dict noNilValueForKey:@"user"];
             UserEntity* u = [[UserEntity alloc] init];
             u.screenName = [uDict noNilValueForKey:@"screen_name"];

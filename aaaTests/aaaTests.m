@@ -49,8 +49,6 @@
 
 - (void)testIsLogin
 {
-    UserInfo* userInfo = SHARE_SETTING_MANAGER.currentUserInfo;
-    
     XCTAssert(SHARE_SETTING_MANAGER.isLogin, @"未登陆");
 }
 
@@ -116,7 +114,7 @@
 - (void)testPost
 {
     UIImage* image = [UIImage imageNamed:@"checkmark.png"];
-    [self.engine cardUploadWithContent:@"testContent" image:image imageType:@"png" onSucceed:^{
+    [self.engine cardUploadWithContent:@"testContent啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊" image:image imageType:@"png" onSucceed:^{
                 [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
     } onError:^(NSError *error) {
                 [self.asyncTestCase notify:kGHUnitWaitStatusFailure];

@@ -39,7 +39,7 @@
     _currentUserInfo = currentUserInfo;
     if (_currentUserInfo)
     {
-        NSDictionary* dict = [_currentUserInfo toDict];
+//        NSDictionary* dict = [_currentUserInfo toDict];
         [self.userDefault setObject:_currentUserInfo.toDict forKey:kUserInfoKey];
     }
     else

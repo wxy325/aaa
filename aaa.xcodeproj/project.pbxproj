@@ -59,6 +59,8 @@
 		189035D61874342600FA2CB3 /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D51874342600FA2CB3 /* Notice.m */; };
 		189035DA187438EB00FA2CB3 /* WXYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D9187438EB00FA2CB3 /* WXYLoginViewController.m */; };
 		189035DD187438F700FA2CB3 /* WXYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */; };
+		189035E0187444E700FA2CB3 /* WXYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DF187444E700FA2CB3 /* WXYRootViewController.m */; };
+		189035E41874471800FA2CB3 /* WXYCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035E31874471800FA2CB3 /* WXYCardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,10 @@
 		189035D9187438EB00FA2CB3 /* WXYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYLoginViewController.m; sourceTree = "<group>"; };
 		189035DB187438F700FA2CB3 /* WXYRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYRegisterViewController.h; sourceTree = "<group>"; };
 		189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYRegisterViewController.m; sourceTree = "<group>"; };
+		189035DE187444E700FA2CB3 /* WXYRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYRootViewController.h; sourceTree = "<group>"; };
+		189035DF187444E700FA2CB3 /* WXYRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYRootViewController.m; sourceTree = "<group>"; };
+		189035E21874471800FA2CB3 /* WXYCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYCardViewController.h; sourceTree = "<group>"; };
+		189035E31874471800FA2CB3 /* WXYCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,10 +490,13 @@
 		184713CC1873118900A72F4B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				189035E11874470800FA2CB3 /* card */,
 				189035D7187438DC00FA2CB3 /* login */,
 				184713CD187311C300A72F4B /* notice */,
 				184713CE187311C300A72F4B /* WXYViewController.h */,
 				184713CF187311C300A72F4B /* WXYViewController.m */,
+				189035DE187444E700FA2CB3 /* WXYRootViewController.h */,
+				189035DF187444E700FA2CB3 /* WXYRootViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -534,6 +543,15 @@
 				189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */,
 			);
 			path = login;
+			sourceTree = "<group>";
+		};
+		189035E11874470800FA2CB3 /* card */ = {
+			isa = PBXGroup;
+			children = (
+				189035E21874471800FA2CB3 /* WXYCardViewController.h */,
+				189035E31874471800FA2CB3 /* WXYCardViewController.m */,
+			);
+			path = card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -665,6 +683,7 @@
 				189035DA187438EB00FA2CB3 /* WXYLoginViewController.m in Sources */,
 				189035D318742E9600FA2CB3 /* CommentEntity.m in Sources */,
 				184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */,
+				189035E0187444E700FA2CB3 /* WXYRootViewController.m in Sources */,
 				184713A21873042300A72F4B /* WXYNetworkEngine.m in Sources */,
 				184713D818731B7400A72F4B /* WXYHomeCoverView.m in Sources */,
 				184713AD1873042300A72F4B /* MKNetworkEngine.m in Sources */,
@@ -677,6 +696,7 @@
 				184713AA1873042300A72F4B /* NSString+MKNetworkKitAdditions.m in Sources */,
 				189035CD18742E7F00FA2CB3 /* CardEntity.m in Sources */,
 				1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */,
+				189035E41874471800FA2CB3 /* WXYCardViewController.m in Sources */,
 				184713B11873042300A72F4B /* UIViewController+ShowHud.m in Sources */,
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,
 				184713AB1873042300A72F4B /* UIAlertView+MKNetworkKitAdditions.m in Sources */,

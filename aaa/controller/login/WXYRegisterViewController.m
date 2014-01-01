@@ -7,6 +7,9 @@
 //
 
 #import "WXYRegisterViewController.h"
+#import "WXYNetworkEngine.h"
+#import "UIViewController+ShowHud.h"
+
 
 @interface WXYRegisterViewController ()
 
@@ -35,6 +38,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)submitButtonPressed:(id)sender {
+- (IBAction)submitButtonPressed:(id)sender
+{
+    [self.mailTextField resignFirstResponder];
+    [self.familyIdTextField resignFirstResponder];
+    [self.passwdTextField resignFirstResponder];
+    
+    NSString* name = self.mailTextField.text;
+    NSString* familyIdStr = self.familyIdTextField.text;
+    NSString* passwd = self.passwdTextField.text;
+    if (!name.length || !familyIdStr.length || !passwd.length)
+    {
+        [self showErrorHudWithText:@"请填写完整信息"];
+        return;
+    }
+    MBProgressHUD* hud = [self showNetworkWaitingHud];
+    [SHARE_NW_ENGINE userRegisterWithname:name familyId:@(familyIdStr.longLongValue) password:passwd onSucceed:^{
+        [hud hide:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } onError:^(NSError *error) {
+        [hud hide:YES];
+        [self showErrorHudWithText:@"信息不正确"];
+    }];
+    
 }
 @end

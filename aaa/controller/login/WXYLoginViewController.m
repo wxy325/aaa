@@ -7,6 +7,9 @@
 //
 
 #import "WXYLoginViewController.h"
+#import "WXYNetworkEngine.h"
+#import "UIViewController+ShowHud.h"
+#import "WXYSettingManager.h"
 
 @interface WXYLoginViewController ()
 
@@ -35,6 +38,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginButtonPressed:(id)sender {
+- (IBAction)loginButtonPressed:(id)sender
+{
+    [self.mailTextField resignFirstResponder];
+    [self.passwdTextField resignFirstResponder];
+    
+    
+    NSString* name = self.mailTextField.text;
+    NSString* passwd = self.passwdTextField.text;
+    if (!name.length || !passwd.length)
+    {
+        [self showErrorHudWithText:@"请填写完整信息"];
+        return;
+    }
+    
+    MBProgressHUD* hud =  [self showNetworkWaitingHud];
+
+    [SHARE_NW_ENGINE userLoginWithName:name password:passwd onSucceed:^{
+        [hud hide:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } onError:^(NSError *error) {
+        [hud hide:YES];
+        [self showErrorHudWithText:@"密码错误"];
+    }];
+    
+    
 }
 @end
