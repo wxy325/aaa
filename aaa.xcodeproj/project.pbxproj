@@ -57,6 +57,8 @@
 		189035D018742E8900FA2CB3 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035CF18742E8900FA2CB3 /* UserEntity.m */; };
 		189035D318742E9600FA2CB3 /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D218742E9600FA2CB3 /* CommentEntity.m */; };
 		189035D61874342600FA2CB3 /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D51874342600FA2CB3 /* Notice.m */; };
+		189035DA187438EB00FA2CB3 /* WXYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D9187438EB00FA2CB3 /* WXYLoginViewController.m */; };
+		189035DD187438F700FA2CB3 /* WXYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,10 @@
 		189035D218742E9600FA2CB3 /* CommentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEntity.m; sourceTree = "<group>"; };
 		189035D41874342600FA2CB3 /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notice.h; sourceTree = "<group>"; };
 		189035D51874342600FA2CB3 /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notice.m; sourceTree = "<group>"; };
+		189035D8187438EB00FA2CB3 /* WXYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYLoginViewController.h; sourceTree = "<group>"; };
+		189035D9187438EB00FA2CB3 /* WXYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYLoginViewController.m; sourceTree = "<group>"; };
+		189035DB187438F700FA2CB3 /* WXYRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYRegisterViewController.h; sourceTree = "<group>"; };
+		189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYRegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +484,7 @@
 		184713CC1873118900A72F4B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				189035D7187438DC00FA2CB3 /* login */,
 				184713CD187311C300A72F4B /* notice */,
 				184713CE187311C300A72F4B /* WXYViewController.h */,
 				184713CF187311C300A72F4B /* WXYViewController.m */,
@@ -516,6 +523,17 @@
 				184713E118731DC800A72F4B /* WXYCardTextCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		189035D7187438DC00FA2CB3 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				189035D8187438EB00FA2CB3 /* WXYLoginViewController.h */,
+				189035D9187438EB00FA2CB3 /* WXYLoginViewController.m */,
+				189035DB187438F700FA2CB3 /* WXYRegisterViewController.h */,
+				189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,8 +659,10 @@
 			files = (
 				184713AF1873042300A72F4B /* Reachability.m in Sources */,
 				184713B01873042300A72F4B /* NSDictionary+noNilValueForKey.m in Sources */,
+				189035DD187438F700FA2CB3 /* WXYRegisterViewController.m in Sources */,
 				18471328187303DC00A72F4B /* main.m in Sources */,
 				189035D61874342600FA2CB3 /* Notice.m in Sources */,
+				189035DA187438EB00FA2CB3 /* WXYLoginViewController.m in Sources */,
 				189035D318742E9600FA2CB3 /* CommentEntity.m in Sources */,
 				184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */,
 				184713A21873042300A72F4B /* WXYNetworkEngine.m in Sources */,

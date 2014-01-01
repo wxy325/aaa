@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WXYNoticeViewController : UIViewController
+@interface WXYNoticeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
