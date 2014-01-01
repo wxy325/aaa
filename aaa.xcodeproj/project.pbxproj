@@ -900,6 +900,7 @@
 				1847134C187303DD00A72F4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1847134D187303DD00A72F4B /* Build configuration list for PBXNativeTarget "aaaTests" */ = {
 			isa = XCConfigurationList;
@@ -908,6 +909,7 @@
 				1847134F187303DD00A72F4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

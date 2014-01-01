@@ -26,7 +26,19 @@
 - (MKNetworkOperation*)userInfoUpdateProvince:(NSString*)province city:(NSString*)city screenName:(NSString*)screenName onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 //user cover update
 - (MKNetworkOperation*)userCoverUpdate:(UIImage*)newCover onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+//get info
+- (MKNetworkOperation*)userGetInfoOnSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 
 
+//card upload
+- (MKNetworkOperation*)cardUploadWithContent:(NSString*)content image:(UIImage*)image imageType:(NSString*)imageType onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 
+//card list
+- (MKNetworkOperation*)cardGetListPage:(NSNumber*)page OnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+
+//card add comment
+- (MKNetworkOperation*)cardAddCommentCardId:(NSNumber*)cardId content:(NSString*)content onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+
+//message system list
+- (MKNetworkOperation*)messageSystemListOnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 @end

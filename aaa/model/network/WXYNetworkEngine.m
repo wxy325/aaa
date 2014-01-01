@@ -18,6 +18,11 @@
 #define URL_USER_REGISTER @"user_register.php"
 #define URL_USER_INFO_UPDATE @"user_info_update.php"
 #define URL_USER_COVER_UPDATE @"user_cover_update.php"
+#define URL_USER_GET_INFO @"user_get_info.php"
+#define URL_CARD_UPLOAD @"card_upload.php"
+#define URL_CARD_LIST @"card_list.php"
+#define URL_CARD_ADD_COMMENT @"card_comment_add.php"
+#define URL_SYSTEM_MESSAGE_LIST @"message_system_list.php"
 
 
 @interface WXYNetworkEngine ()
@@ -167,6 +172,119 @@
         if (succeedBlock)
         {
             succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)userGetInfoOnSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    op = [self startOperationWithPath:URL_USER_GET_INFO needLogin:YES paramers:@{} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)cardUploadWithContent:(NSString*)content image:(UIImage*)image imageType:(NSString*)imageType onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    NSMutableDictionary* imageDict = [@{} mutableCopy];
+    if (image)
+    {
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+        imageDict[@"image"] = imageData;
+    }
+    if (!content) {
+        content = @"";
+    }
+    if (!imageType)
+    {
+        imageType = @"";
+    }
+    
+    op = [self startOperationWithPath:URL_CARD_UPLOAD needLogin:YES paramers:@{@"content":content, @"image_type":imageType} dataDict:imageDict onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)cardGetListPage:(NSNumber*)page OnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+{
+    MKNetworkOperation* op = nil;
+    op = [self startOperationWithPath:URL_CARD_LIST needLogin:YES paramers:@{@"page":page} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock(nil);
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    return op;
+}
+
+
+- (MKNetworkOperation*)cardAddCommentCardId:(NSNumber*)cardId content:(NSString*)content onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    op = [self startOperationWithPath:URL_CARD_ADD_COMMENT
+                            needLogin:YES
+                             paramers:@{@"card_id":cardId, @"content":content}
+                          onSucceeded:^(MKNetworkOperation *completedOperation)
+          {
+              if (succeedBlock)
+              {
+                  succeedBlock();
+              }
+          }
+                              onError:^(MKNetworkOperation *completedOperation, NSError *error)
+          {
+              if (errorBlock)
+              {
+                  errorBlock(error);
+              }
+          }];
+    
+    return op;
+}
+
+- (MKNetworkOperation*)messageSystemListOnSucceed:(ArrayBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    op = [self startOperationWithPath:URL_SYSTEM_MESSAGE_LIST needLogin:YES paramers:@{} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock(nil);
         }
     } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
         if (errorBlock)
