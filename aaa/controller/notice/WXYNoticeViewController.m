@@ -64,11 +64,12 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:IDentifier];
+        cell.detailTextLabel.numberOfLines = 0;
     }
     
     Notice* n = self.datasourceArray[indexPath.row];
     cell.textLabel.text = n.title;
-    cell.detailTextLabel.text = n.content;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n%@",n.createAt, n.content];;
     
     return cell;
 }
@@ -77,5 +78,13 @@
     return self.datasourceArray.count;
 }
 #pragma mark - UITableView Delegate
-
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Notice* n = self.datasourceArray[indexPath.row];
+    float base = 44.f;
+    NSString* content = [NSString stringWithFormat:@"%@\n%@",n.createAt, n.content];
+    CGSize size = [content sizeWithFont:[UIFont systemFontOfSize:15.f] constrainedToSize:CGSizeMake(320, INFINITY)];
+    
+    return base + size.height;
+}
 @end

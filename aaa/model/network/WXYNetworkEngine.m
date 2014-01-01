@@ -386,7 +386,7 @@
             Notice* n = [[Notice alloc] init];
             n.title = dict[@"title"];
             n.content = dict[@"content"];
-            n.createAt = dict[@"create_at"];
+            n.createAt = dict[@"creat_at"];
             [array addObject:n];
         }
         

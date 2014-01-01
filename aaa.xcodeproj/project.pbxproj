@@ -64,6 +64,8 @@
 		189035EB18746E0200FA2CB3 /* MRZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		189035F218747EE400FA2CB3 /* WXYPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035F118747EE400FA2CB3 /* WXYPostViewController.m */; };
 		189035F61874848600FA2CB3 /* WXYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035F51874848600FA2CB3 /* WXYNewViewController.m */; };
+		189035FB18748B3600FA2CB3 /* WXYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035FA18748B3600FA2CB3 /* WXYSettingViewController.m */; };
+		189035FE18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035FD18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,10 @@
 		189035F118747EE400FA2CB3 /* WXYPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYPostViewController.m; sourceTree = "<group>"; };
 		189035F41874848600FA2CB3 /* WXYNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYNewViewController.h; sourceTree = "<group>"; };
 		189035F51874848600FA2CB3 /* WXYNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYNewViewController.m; sourceTree = "<group>"; };
+		189035F918748B3600FA2CB3 /* WXYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYSettingViewController.h; sourceTree = "<group>"; };
+		189035FA18748B3600FA2CB3 /* WXYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYSettingViewController.m; sourceTree = "<group>"; };
+		189035FC18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYUpdateUserInfoViewController.h; sourceTree = "<group>"; };
+		189035FD18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYUpdateUserInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +506,7 @@
 		184713CC1873118900A72F4B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				189035F818748B2400FA2CB3 /* setting */,
 				189035F31874847C00FA2CB3 /* new */,
 				189035EF18747EDD00FA2CB3 /* post */,
 				189035E11874470800FA2CB3 /* card */,
@@ -591,6 +598,17 @@
 				189035F51874848600FA2CB3 /* WXYNewViewController.m */,
 			);
 			path = new;
+			sourceTree = "<group>";
+		};
+		189035F818748B2400FA2CB3 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				189035F918748B3600FA2CB3 /* WXYSettingViewController.h */,
+				189035FA18748B3600FA2CB3 /* WXYSettingViewController.m */,
+				189035FC18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.h */,
+				189035FD18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.m */,
+			);
+			path = setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -742,6 +760,8 @@
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,
 				184713AB1873042300A72F4B /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				184713AC1873042300A72F4B /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				189035FE18748BC900FA2CB3 /* WXYUpdateUserInfoViewController.m in Sources */,
+				189035FB18748B3600FA2CB3 /* WXYSettingViewController.m in Sources */,
 				184713D3187311CC00A72F4B /* WXYNoticeViewController.m in Sources */,
 				184713A71873042300A72F4B /* NSData+MKBase64.m in Sources */,
 				184713A01873042300A72F4B /* WXYDataModel.m in Sources */,
