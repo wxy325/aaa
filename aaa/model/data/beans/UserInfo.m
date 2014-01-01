@@ -10,6 +10,11 @@
 #import "NSDictionary+noNilValueForKey.h"
 
 @implementation UserInfo
+@dynamic location;
+- (NSString*)location
+{
+    return [NSString stringWithFormat:@"%@ %@",self.province,self.city];
+}
 
 //#pragma mark -
 //#pragma mark NSCoding
@@ -58,7 +63,8 @@
     [dict setNoNilValue:self.password forKey:@"password"];
     [dict setNoNilValue:self.headPhotoUrl forKey:@"headPhotoUrl"];
     [dict setNoNilValue:self.coverUrl forKey:@"coverUrl"];
-    [dict setNoNilValue:self.location forKey:@"location"];
+    [dict setNoNilValue:self.province forKey:@"province"];
+    [dict setNoNilValue:self.city forKey:@"city"];
     [dict setNoNilValue:self.screenName forKey:@"screenName"];
     //@{@"userName":self.userName, @"password":self.password, @"headPhotoUrl":self.headPhotoUrl, @"coverUrl":self.coverUrl, @"location":self.location};
     return dict;
@@ -72,7 +78,8 @@
         self.password = dict[@"password"];
         self.headPhotoUrl = dict[@"headPhotoUrl"];
         self.coverUrl = dict[@"coverUrl"];
-        self.location = dict[@"location"];
+        self.province = dict[@"province"];
+        self.city = dict[@"city"];
         self.screenName = dict[@"screenName"];
     }
     return self;

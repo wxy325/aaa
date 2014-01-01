@@ -9,6 +9,7 @@
 #import "WXYSettingViewController.h"
 #import "WXYNetworkEngine.h"
 #import "UIViewController+ShowHud.h"
+#import "WXYSettingManager.h"
 #define kActionSheetShoot 0
 #define kActionSheetSelect 1
 @interface WXYSettingViewController ()
@@ -45,7 +46,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;f
 }
 
 - (void)didReceiveMemoryWarning

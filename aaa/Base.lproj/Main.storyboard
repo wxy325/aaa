@@ -291,6 +291,7 @@
                     <connections>
                         <outlet property="cityTextField" destination="fej-Lm-9MZ" id="uSy-nl-pec"/>
                         <outlet property="provinceTextField" destination="EWs-xx-Bsg" id="mxV-xJ-RYE"/>
+                        <outlet property="screenNameTextField" destination="6a2-dk-8vJ" id="kfW-QD-rAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9b-fr-ooM" userLabel="First Responder" sceneMemberID="firstResponder"/>

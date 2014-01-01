@@ -15,8 +15,10 @@
 @property (strong, nonatomic) NSString* password;
 @property (strong, nonatomic) NSString* headPhotoUrl;
 @property (strong, nonatomic) NSString* coverUrl;
-@property (strong, nonatomic) NSString* location;
+@property (readonly, nonatomic) NSString* location;
 @property (strong, nonatomic) NSString* screenName;
+@property (strong, nonatomic) NSString* province;
+@property (strong, nonatomic) NSString* city;
 
 - (NSDictionary*)toDict;
 - (id)initWithDict:(NSDictionary*)dict;

@@ -239,7 +239,8 @@
 
         UserInfo* userInfo = SHARE_SETTING_MANAGER.currentUserInfo;
         
-        userInfo.location = [NSString stringWithFormat:@"%@ %@",[dict noNilValueForKey:@"province"], [dict noNilValueForKey:@"city"]];
+        userInfo.province = [dict noNilValueForKey:@"province"];
+        userInfo.city = [dict noNilValueForKey:@"city"];
         userInfo.screenName = [dict noNilValueForKey:@"screen_name"];
         userInfo.coverUrl = [dict noNilValueForKey:@"cover_image_url"];
         userInfo.headPhotoUrl = [dict noNilValueForKey:@"head_photo_url"];
