@@ -10,16 +10,28 @@
 #import "WXYCardTextCell.h"
 #import "UIViewController+ShowHud.h"
 #import "WXYNetworkEngine.h"
+#import "WXYHomeCoverView.h"
+#import "WXYSettingManager.h"
 
 #define BGCOLOR [UIColor colorWithRed:235.f/255.f green:235.f/255.f blue:235.f/255.f alpha:1.f]
 
 @interface WXYCardViewController ()
 
 @property (strong, nonatomic) NSArray* datasourceArray;
+@property (strong, nonatomic) WXYHomeCoverView* coverView;
 
 @end
 
 @implementation WXYCardViewController
+@synthesize coverView = _coverView;
+- (WXYHomeCoverView*)coverView
+{
+    if (!_coverView)
+    {
+        _coverView = [WXYHomeCoverView makeView];
+    }
+    return _coverView;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,6 +48,7 @@
     self.tableView.backgroundColor = BGCOLOR;
     self.view.backgroundColor = BGCOLOR;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.tableHeaderView = self.coverView;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -45,6 +58,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.coverView bind:SHARE_SETTING_MANAGER.currentUserInfo];
+    [SHARE_NW_ENGINE userGetInfoOnSucceed:^{
+        [self.coverView bind:SHARE_SETTING_MANAGER.currentUserInfo];
+    } onError:^(NSError *error) {
+        
+    }];
+    
     MBProgressHUD* hud = [self showNetworkWaitingHud];
     [SHARE_NW_ENGINE cardGetListPage:@0 OnSucceed:^(NSArray *resultArray) {
         self.datasourceArray = resultArray;
@@ -88,6 +108,8 @@
         cell = [WXYCardTextCell makeView];
     }
     [cell bind:(CardEntity*)self.datasourceArray[indexPath.row]];
+    cell.delegate = self;
+    cell.first = indexPath.row == 0;
     
     return cell;
 }
@@ -145,5 +167,10 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [WXYCardTextCell getHeight:(CardEntity*)self.datasourceArray[indexPath.row]];
+}
+
+- (void)addComment:(UITableViewCell *)cell
+{
+    NSLog(@"aaa");
 }
 @end

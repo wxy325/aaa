@@ -12,7 +12,7 @@
 
 @protocol WXYCardTextCellDelegate <NSObject>
 
-- (void)commentButtonPressed:(UITableViewCell*)cell;
+- (void)addComment:(UITableViewCell*)cell;
 
 @end
 
@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UILabel* dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView* picView;
 @property (weak, nonatomic) IBOutlet UILabel* contentLabel;
+
+@property (assign, nonatomic) BOOL first;
+
 //@property (weak, nonatomic) IBOutlet UIView* commentView;
 
 + (WXYCardTextCell*)makeView;

@@ -9,7 +9,7 @@
 #import "WXYHomeCoverView.h"
 #import "UserInfo.h"
 #import "UIImageView+MKNetworkKitAdditions.h"
-
+#import "WXYNetworkEngine.h"
 
 @implementation WXYHomeCoverView
 
@@ -24,9 +24,12 @@
 
 - (void)bind:(UserInfo*)userInfo
 {
-    self.userNameLabel.text = userInfo.userName;
-    [self.headPhotoImageView setImageFromURL:[NSURL URLWithString:userInfo.headPhotoUrl] placeHolderImage:nil animation:YES];
-    [self.coverImageView setImageFromURL:[NSURL URLWithString:userInfo.coverUrl] placeHolderImage:nil animation:YES];
+    self.userNameLabel.text = userInfo.screenName;
+    self.locationLabel.text = userInfo.location;
+    [self.headPhotoImageView setImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@",HOST_NAME,userInfo.headPhotoUrl]] placeHolderImage:nil animation:YES];
+    
+    
+    [self.coverImageView setImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@",HOST_NAME,userInfo.coverUrl]] placeHolderImage:nil animation:YES];
 }
 
 + (WXYHomeCoverView*)makeView

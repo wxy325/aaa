@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WXYCardViewController : UITableViewController
+#import "WXYCardTextCell.h"
+@interface WXYCardViewController : UITableViewController<WXYCardTextCellDelegate>
 
 @end

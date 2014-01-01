@@ -147,9 +147,22 @@
 }
 - (IBAction)commendButtonPressed:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(commentButtonPressed:)])
+    if ([self.delegate respondsToSelector:@selector(addComment:)])
     {
-        [self.delegate commentButtonPressed:self];
+        [self.delegate addComment:self];
+    }
+}
+- (void)setFirst:(BOOL)first
+{
+    _first = first;
+    CGRect rect = self.timeline.frame;
+    if (_first)
+    {
+        self.timeline.frame = CGRectMake(rect.origin.x, 10, rect.size.width, rect.size.height);
+    }
+    else
+    {
+            self.timeline.frame = CGRectMake(rect.origin.x, 0, rect.size.width, rect.size.height);
     }
 }
 @end
