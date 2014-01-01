@@ -28,6 +28,10 @@
 - (MKNetworkOperation*)userInfoUpdateProvince:(NSString*)province city:(NSString*)city screenName:(NSString*)screenName onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 //user cover update
 - (MKNetworkOperation*)userCoverUpdate:(UIImage*)newCover onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+
+//user head update
+- (MKNetworkOperation*)userHeadUpdate:(UIImage*)newHead onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
+
 //get info
 - (MKNetworkOperation*)userGetInfoOnSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock;
 

@@ -18,6 +18,7 @@
 #define URL_USER_REGISTER @"user_register.php"
 #define URL_USER_INFO_UPDATE @"user_info_update.php"
 #define URL_USER_COVER_UPDATE @"user_cover_update.php"
+#define URL_USER_HEAD_UPDATE @"user_head_update.php"
 #define URL_USER_GET_INFO @"user_get_info.php"
 #define URL_CARD_UPLOAD @"card_upload.php"
 #define URL_CARD_LIST @"card_list.php"
@@ -208,6 +209,27 @@
     return op;
 }
 
+- (MKNetworkOperation*)userHeadUpdate:(UIImage*)newHead onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
+{
+    MKNetworkOperation* op = nil;
+    
+    NSData *imageData = UIImageJPEGRepresentation(newHead, 0.5);
+    NSDictionary* imageDict = @{@"image":imageData};
+    op = [self startOperationWithPath:URL_USER_HEAD_UPDATE needLogin:YES paramers:@{@"type":@"jpg"} dataDict:imageDict onSucceeded:^(MKNetworkOperation *completedOperation) {
+        if (succeedBlock)
+        {
+            succeedBlock();
+        }
+    } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
+        if (errorBlock)
+        {
+            errorBlock(error);
+        }
+    }];
+    
+    return op;
+}
+
 - (MKNetworkOperation*)userGetInfoOnSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
     MKNetworkOperation* op = nil;
@@ -248,12 +270,13 @@
     if (!content) {
         content = @"";
     }
+    
     if (!imageType)
     {
         imageType = @"";
     }
     
-    op = [self startOperationWithPath:URL_CARD_UPLOAD needLogin:YES paramers:@{@"content":content, @"image_type":imageType} dataDict:imageDict onSucceeded:^(MKNetworkOperation *completedOperation) {
+    op = [self startOperationWithPath:URL_CARD_UPLOAD needLogin:YES paramers:@{@"content":content, @"type":imageType} dataDict:imageDict onSucceeded:^(MKNetworkOperation *completedOperation) {
         if (succeedBlock)
         {
             succeedBlock();
@@ -272,9 +295,45 @@
 {
     MKNetworkOperation* op = nil;
     op = [self startOperationWithPath:URL_CARD_LIST needLogin:YES paramers:@{@"page":page} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        NSArray* responseArray = completedOperation.responseJSON;
+
+        NSMutableArray* returnArray = [@[] mutableCopy];
+        for (NSDictionary* dict in responseArray)
+        {
+            CardEntity* c = [[CardEntity alloc] init];
+            NSString* cardIdStr = [dict noNilValueForKey:@"id"];
+            c.cardId = @(cardIdStr.longLongValue);
+            c.content = [dict noNilValueForKey:@"content"];
+            c.imageUrl = [dict noNilValueForKey:@"image_url"];
+            c.createAt = [dict noNilValueForKey:@"create_at"];
+            NSDictionary* uDict = [dict noNilValueForKey:@"user"];
+            UserEntity* u = [[UserEntity alloc] init];
+            u.screenName = [uDict noNilValueForKey:@"screen_name"];
+            u.headPhotoUrl = [uDict noNilValueForKey:@"head_photo_url"];
+            c.user = u;
+            
+            NSArray* commentDictArray = [dict noNilValueForKey:@"comment"];
+            NSMutableArray* commentArray = [@[] mutableCopy];
+            for (NSDictionary* cDict in commentDictArray)
+            {
+                CommentEntity* com = [[CommentEntity alloc] init];
+                com.createAt = [cDict noNilValueForKey:@"create_at"];
+                com.content = [cDict noNilValueForKey:@"content"];
+                
+                NSDictionary* cuDict = [cDict noNilValueForKey:@"user"];
+                UserEntity* cu = [[UserEntity alloc] init];
+                u.screenName = [cuDict noNilValueForKey:@"screen_name"];
+                u.headPhotoUrl = [cuDict noNilValueForKey:@"head_photo_url"];
+                com.user = cu;
+                [commentArray addObject:com];
+            }
+            c.commentArray = commentArray;
+            [returnArray addObject:c];
+        }
+        
         if (succeedBlock)
         {
-            succeedBlock(nil);
+            succeedBlock(returnArray);
         }
     } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
         if (errorBlock)
@@ -316,9 +375,24 @@
     MKNetworkOperation* op = nil;
     
     op = [self startOperationWithPath:URL_SYSTEM_MESSAGE_LIST needLogin:YES paramers:@{} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        
+        NSMutableArray* array = [@[] mutableCopy];
+        
+        NSArray* responseArray = completedOperation.responseJSON;
+        
+        
+        for (NSDictionary* dict in responseArray)
+        {
+            Notice* n = [[Notice alloc] init];
+            n.title = dict[@"title"];
+            n.content = dict[@"content"];
+            n.createAt = dict[@"create_at"];
+            [array addObject:n];
+        }
+        
         if (succeedBlock)
         {
-            succeedBlock(nil);
+            succeedBlock(array);
         }
     } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
         if (errorBlock)

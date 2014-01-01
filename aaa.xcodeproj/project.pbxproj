@@ -53,6 +53,10 @@
 		184713E218731DC800A72F4B /* WXYCardTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184713E118731DC800A72F4B /* WXYCardTextCell.xib */; };
 		184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713E618731DEF00A72F4B /* WXYCardCommentView.m */; };
 		184713E918731DFD00A72F4B /* WXYCardCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184713E818731DFD00A72F4B /* WXYCardCommentView.xib */; };
+		189035CD18742E7F00FA2CB3 /* CardEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035CC18742E7F00FA2CB3 /* CardEntity.m */; };
+		189035D018742E8900FA2CB3 /* UserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035CF18742E8900FA2CB3 /* UserEntity.m */; };
+		189035D318742E9600FA2CB3 /* CommentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D218742E9600FA2CB3 /* CommentEntity.m */; };
+		189035D61874342600FA2CB3 /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035D51874342600FA2CB3 /* Notice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +157,14 @@
 		184713E518731DEF00A72F4B /* WXYCardCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYCardCommentView.h; sourceTree = "<group>"; };
 		184713E618731DEF00A72F4B /* WXYCardCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardCommentView.m; sourceTree = "<group>"; };
 		184713E818731DFD00A72F4B /* WXYCardCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXYCardCommentView.xib; sourceTree = "<group>"; };
+		189035CB18742E7F00FA2CB3 /* CardEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardEntity.h; sourceTree = "<group>"; };
+		189035CC18742E7F00FA2CB3 /* CardEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardEntity.m; sourceTree = "<group>"; };
+		189035CE18742E8900FA2CB3 /* UserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEntity.h; sourceTree = "<group>"; };
+		189035CF18742E8900FA2CB3 /* UserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEntity.m; sourceTree = "<group>"; };
+		189035D118742E9600FA2CB3 /* CommentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentEntity.h; sourceTree = "<group>"; };
+		189035D218742E9600FA2CB3 /* CommentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentEntity.m; sourceTree = "<group>"; };
+		189035D41874342600FA2CB3 /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notice.h; sourceTree = "<group>"; };
+		189035D51874342600FA2CB3 /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +296,14 @@
 			children = (
 				184713601873042300A72F4B /* UserInfo.h */,
 				184713611873042300A72F4B /* UserInfo.m */,
+				189035CB18742E7F00FA2CB3 /* CardEntity.h */,
+				189035CC18742E7F00FA2CB3 /* CardEntity.m */,
+				189035CE18742E8900FA2CB3 /* UserEntity.h */,
+				189035CF18742E8900FA2CB3 /* UserEntity.m */,
+				189035D118742E9600FA2CB3 /* CommentEntity.h */,
+				189035D218742E9600FA2CB3 /* CommentEntity.m */,
+				189035D41874342600FA2CB3 /* Notice.h */,
+				189035D51874342600FA2CB3 /* Notice.m */,
 			);
 			path = beans;
 			sourceTree = "<group>";
@@ -622,16 +642,20 @@
 				184713AF1873042300A72F4B /* Reachability.m in Sources */,
 				184713B01873042300A72F4B /* NSDictionary+noNilValueForKey.m in Sources */,
 				18471328187303DC00A72F4B /* main.m in Sources */,
+				189035D61874342600FA2CB3 /* Notice.m in Sources */,
+				189035D318742E9600FA2CB3 /* CommentEntity.m in Sources */,
 				184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */,
 				184713A21873042300A72F4B /* WXYNetworkEngine.m in Sources */,
 				184713D818731B7400A72F4B /* WXYHomeCoverView.m in Sources */,
 				184713AD1873042300A72F4B /* MKNetworkEngine.m in Sources */,
+				189035D018742E8900FA2CB3 /* UserEntity.m in Sources */,
 				184713A11873042300A72F4B /* WXYError.m in Sources */,
 				184713A81873042300A72F4B /* NSDate+RFC1123.m in Sources */,
 				184713D0187311C300A72F4B /* WXYViewController.m in Sources */,
 				184713DD18731DAF00A72F4B /* WXYCardTextCell.m in Sources */,
 				1847139F1873042300A72F4B /* WXYSettingManager.m in Sources */,
 				184713AA1873042300A72F4B /* NSString+MKNetworkKitAdditions.m in Sources */,
+				189035CD18742E7F00FA2CB3 /* CardEntity.m in Sources */,
 				1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */,
 				184713B11873042300A72F4B /* UIViewController+ShowHud.m in Sources */,
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,

@@ -82,4 +82,63 @@
     }];
     [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
 }
+- (void)testUpdateUserCover
+{
+    UIImage* image = [UIImage imageNamed:@"checkmark.png"];
+    [self.engine userCoverUpdate:image onSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+
+- (void)testUpdateUserHead
+{
+    UIImage* image = [UIImage imageNamed:@"checkmark.png"];
+    [self.engine userHeadUpdate:image onSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+
+- (void)testCardGetList
+{
+    [self.engine cardGetListPage:@0 OnSucceed:^(NSArray *resultArray) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+- (void)testPost
+{
+    UIImage* image = [UIImage imageNamed:@"checkmark.png"];
+    [self.engine cardUploadWithContent:@"testContent" image:image imageType:@"png" onSucceed:^{
+                [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+                [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+        [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+- (void)testAddComment
+{
+    [self.engine cardAddCommentCardId:@1 content:@"testComment" onSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+- (void)testNewsList
+{
+    [self.engine messageSystemListOnSucceed:^(NSArray *resultArray) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "UserInfo.h"
-
+#import "UserEntity.h"
+#import "CardEntity.h"
+#import "CommentEntity.h"
+#import "Notice.h"
 
 #import <Foundation/Foundation.h>
 
