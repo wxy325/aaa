@@ -61,6 +61,7 @@
 		189035DD187438F700FA2CB3 /* WXYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DC187438F700FA2CB3 /* WXYRegisterViewController.m */; };
 		189035E0187444E700FA2CB3 /* WXYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DF187444E700FA2CB3 /* WXYRootViewController.m */; };
 		189035E41874471800FA2CB3 /* WXYCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035E31874471800FA2CB3 /* WXYCardViewController.m */; };
+		189035EB18746E0200FA2CB3 /* MRZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +178,8 @@
 		189035DF187444E700FA2CB3 /* WXYRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYRootViewController.m; sourceTree = "<group>"; };
 		189035E21874471800FA2CB3 /* WXYCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYCardViewController.h; sourceTree = "<group>"; };
 		189035E31874471800FA2CB3 /* WXYCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardViewController.m; sourceTree = "<group>"; };
+		189035E918746E0200FA2CB3 /* MRZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRZoomScrollView.h; sourceTree = "<group>"; };
+		189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRZoomScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +348,7 @@
 		1847136E1873042300A72F4B /* thirdpart */ = {
 			isa = PBXGroup;
 			children = (
+				189035E818746E0200FA2CB3 /* MRZoomScrollView */,
 				184713C9187306E400A72F4B /* GHUnitIOS.framework */,
 				184713701873042300A72F4B /* MBProgressHUD */,
 				184713731873042300A72F4B /* MKNetworkKit */,
@@ -554,6 +558,15 @@
 			path = card;
 			sourceTree = "<group>";
 		};
+		189035E818746E0200FA2CB3 /* MRZoomScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				189035E918746E0200FA2CB3 /* MRZoomScrollView.h */,
+				189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */,
+			);
+			path = MRZoomScrollView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -697,6 +710,7 @@
 				189035CD18742E7F00FA2CB3 /* CardEntity.m in Sources */,
 				1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */,
 				189035E41874471800FA2CB3 /* WXYCardViewController.m in Sources */,
+				189035EB18746E0200FA2CB3 /* MRZoomScrollView.m in Sources */,
 				184713B11873042300A72F4B /* UIViewController+ShowHud.m in Sources */,
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,
 				184713AB1873042300A72F4B /* UIAlertView+MKNetworkKitAdditions.m in Sources */,

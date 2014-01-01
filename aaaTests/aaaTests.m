@@ -123,7 +123,7 @@
 }
 - (void)testAddComment
 {
-    [self.engine cardAddCommentCardId:@1 content:@"testComment" onSucceed:^{
+    [self.engine cardAddCommentCardId:@12 content:@"testComment" onSucceed:^{
         [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
     } onError:^(NSError *error) {
         [self.asyncTestCase notify:kGHUnitWaitStatusFailure];

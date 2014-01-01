@@ -10,9 +10,23 @@
 #import "WXYDataModel.h"
 #import "UIImageView+MKNetworkKitAdditions.h"
 #import "WXYNetworkEngine.h"
+#import "WXYCardCommentView.h"
 
+@interface WXYCardTextCell ()
+@property (strong, nonatomic) NSMutableArray* commentViewArray;
+
+@end
 
 @implementation WXYCardTextCell
+@synthesize commentViewArray = _commentViewArray;
+- (NSMutableArray*)commentViewArray
+{
+    if (!_commentViewArray)
+    {
+        _commentViewArray = [@[] mutableCopy];
+    }
+    return _commentViewArray;
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -65,8 +79,36 @@
     float height = [WXYCardTextCell getHeight:entity];
     self.bgImageView.frame = CGRectMake(8, 5, 305, height - 20);
     self.bgImageView.image = bgImage;
+
+
     CGRect tlFrame = self.timeline.frame;
     self.timeline.frame = CGRectMake(tlFrame.origin.x, tlFrame.origin.y, tlFrame.size.width, height);
+    
+    
+    for (UIView* v in self.commentViewArray)
+    {
+        [v removeFromSuperview];
+    }
+    [self.commentViewArray removeAllObjects];
+    textBase += 15.;
+    for (CommentEntity* comment in entity.commentArray)
+    {
+        WXYCardCommentView* v = [WXYCardCommentView makeView];
+        [v bind:comment];
+        v.frame = CGRectMake(31.f, textBase, 280.f, 76.f);
+        [self.contentView addSubview:v];
+        textBase += 76.f;
+        [self.commentViewArray addObject:v];
+    }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    for (UIView* v in self.commentViewArray)
+    {
+        [self.contentView bringSubviewToFront:v];
+    }
 }
 
 + (float)getHeight:(CardEntity*)entity
@@ -80,6 +122,8 @@
 
     textBase += size.height + 10;
     textBase += 30.f;
+    
+    textBase += entity.commentArray.count * 76;
     return textBase;
 }
 + (WXYCardTextCell*)makeView
@@ -99,6 +143,13 @@
     else
     {
         return nil;
+    }
+}
+- (IBAction)commendButtonPressed:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(commentButtonPressed:)])
+    {
+        [self.delegate commentButtonPressed:self];
     }
 }
 @end

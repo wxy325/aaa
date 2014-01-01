@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CommentEntity;
 
 @interface WXYCardCommentView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView* userHeadPhotoImageView;
@@ -14,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel* contentLabel;
 @property (weak, nonatomic) IBOutlet UILabel* dateLabel;
 
-
+- (void)bind:(CommentEntity*)comment;
 
 + (WXYCardCommentView*)makeView;
 @end

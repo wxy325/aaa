@@ -317,13 +317,13 @@
             for (NSDictionary* cDict in commentDictArray)
             {
                 CommentEntity* com = [[CommentEntity alloc] init];
-                com.createAt = [cDict noNilValueForKey:@"create_at"];
+                com.createAt = [cDict noNilValueForKey:@"creat_at"];
                 com.content = [cDict noNilValueForKey:@"content"];
                 
                 NSDictionary* cuDict = [cDict noNilValueForKey:@"user"];
                 UserEntity* cu = [[UserEntity alloc] init];
-                u.screenName = [cuDict noNilValueForKey:@"screen_name"];
-                u.headPhotoUrl = [cuDict noNilValueForKey:@"head_photo_url"];
+                cu.screenName = [cuDict noNilValueForKey:@"screen_name"];
+                cu.headPhotoUrl = [cuDict noNilValueForKey:@"head_photo_url"];
                 com.user = cu;
                 [commentArray addObject:com];
             }

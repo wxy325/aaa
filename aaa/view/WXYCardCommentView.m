@@ -7,7 +7,9 @@
 //
 
 #import "WXYCardCommentView.h"
-
+#import "CommentEntity.h"
+#import "WXYNetworkEngine.h"
+#import "UIImageView+MKNetworkKitAdditions.h"
 @implementation WXYCardCommentView
 
 - (id)initWithFrame:(CGRect)frame
@@ -34,7 +36,13 @@
     }
 }
 
-
+- (void)bind:(CommentEntity*)comment
+{
+    self.dateLabel.text = comment.createAt;
+    self.contentLabel.text = [NSString stringWithFormat:@"%@:%@",comment.user.screenName, comment.content];
+    self.userHeadPhotoImageView.image = nil;
+    [self.userHeadPhotoImageView setImageFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@",HOST_NAME,comment.user.headPhotoUrl]] placeHolderImage:nil animation:YES];
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

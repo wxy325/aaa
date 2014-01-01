@@ -10,8 +10,15 @@
 
 @class CardEntity;
 
+@protocol WXYCardTextCellDelegate <NSObject>
+
+- (void)commentButtonPressed:(UITableViewCell*)cell;
+
+@end
 
 @interface WXYCardTextCell : UITableViewCell
+
+@property (weak, nonatomic) NSObject<WXYCardTextCellDelegate>* delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *timeline;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
@@ -27,4 +34,6 @@
 
 - (void)bind:(CardEntity*)entity;
 + (float)getHeight:(CardEntity*)entity;
+
+- (IBAction)commendButtonPressed:(id)sender;
 @end
