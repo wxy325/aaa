@@ -63,4 +63,23 @@
     }];
     [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
 }
+- (void)testUserRegister
+{
+    [self.engine userRegisterWithname:@"testUser@qq.com" familyId:@1 password:@"linhan" onSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
+
+- (void)testUserInfoUpdate
+{
+    [self.engine userInfoUpdateProvince:@"测试省份" city:@"测试城市" screenName:@"哈哈哈" onSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
 @end

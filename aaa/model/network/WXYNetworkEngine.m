@@ -148,6 +148,12 @@
     MKNetworkOperation* op = nil;
     
     op = [self startOperationWithPath:URL_USER_REGISTER needLogin:NO paramers:@{@"user_name":userName, @"family_id":familyId, @"family_password":password} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        
+        UserInfo* userInfo = [[UserInfo alloc] init];
+        userInfo.userName = userName;
+        userInfo.password = password;
+        SHARE_SETTING_MANAGER.currentUserInfo = userInfo;
+        
         if (succeedBlock)
         {
             succeedBlock();
