@@ -12,6 +12,7 @@
 #import "WXYNetworkEngine.h"
 #import "WXYHomeCoverView.h"
 #import "WXYSettingManager.h"
+#import "WXYPostViewController.h"
 
 #define BGCOLOR [UIColor colorWithRed:235.f/255.f green:235.f/255.f blue:235.f/255.f alpha:1.f]
 
@@ -171,6 +172,15 @@
 
 - (void)addComment:(UITableViewCell *)cell
 {
-    NSLog(@"aaa");
+    NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+    __block CardEntity* card = self.datasourceArray[indexPath.row];
+    
+    WXYPostViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WXYPostViewController"];
+    vc.option = NO;
+    vc.postBlock = ^(NSString* content, VoidBlock succeedBlock, ErrorBlock errorBlock)
+    {
+        [SHARE_NW_ENGINE cardAddCommentCardId:card.cardId content:content onSucceed:succeedBlock onError:errorBlock];
+    };
+    [self presentViewController:vc animated:YES completion:nil];
 }
 @end

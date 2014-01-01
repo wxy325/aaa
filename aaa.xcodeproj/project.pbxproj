@@ -62,6 +62,8 @@
 		189035E0187444E700FA2CB3 /* WXYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035DF187444E700FA2CB3 /* WXYRootViewController.m */; };
 		189035E41874471800FA2CB3 /* WXYCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035E31874471800FA2CB3 /* WXYCardViewController.m */; };
 		189035EB18746E0200FA2CB3 /* MRZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		189035F218747EE400FA2CB3 /* WXYPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035F118747EE400FA2CB3 /* WXYPostViewController.m */; };
+		189035F61874848600FA2CB3 /* WXYNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189035F51874848600FA2CB3 /* WXYNewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +182,10 @@
 		189035E31874471800FA2CB3 /* WXYCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYCardViewController.m; sourceTree = "<group>"; };
 		189035E918746E0200FA2CB3 /* MRZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRZoomScrollView.h; sourceTree = "<group>"; };
 		189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRZoomScrollView.m; sourceTree = "<group>"; };
+		189035F018747EE400FA2CB3 /* WXYPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYPostViewController.h; sourceTree = "<group>"; };
+		189035F118747EE400FA2CB3 /* WXYPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYPostViewController.m; sourceTree = "<group>"; };
+		189035F41874848600FA2CB3 /* WXYNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYNewViewController.h; sourceTree = "<group>"; };
+		189035F51874848600FA2CB3 /* WXYNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXYNewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,6 +500,8 @@
 		184713CC1873118900A72F4B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				189035F31874847C00FA2CB3 /* new */,
+				189035EF18747EDD00FA2CB3 /* post */,
 				189035E11874470800FA2CB3 /* card */,
 				189035D7187438DC00FA2CB3 /* login */,
 				184713CD187311C300A72F4B /* notice */,
@@ -565,6 +573,24 @@
 				189035EA18746E0200FA2CB3 /* MRZoomScrollView.m */,
 			);
 			path = MRZoomScrollView;
+			sourceTree = "<group>";
+		};
+		189035EF18747EDD00FA2CB3 /* post */ = {
+			isa = PBXGroup;
+			children = (
+				189035F018747EE400FA2CB3 /* WXYPostViewController.h */,
+				189035F118747EE400FA2CB3 /* WXYPostViewController.m */,
+			);
+			path = post;
+			sourceTree = "<group>";
+		};
+		189035F31874847C00FA2CB3 /* new */ = {
+			isa = PBXGroup;
+			children = (
+				189035F41874848600FA2CB3 /* WXYNewViewController.h */,
+				189035F51874848600FA2CB3 /* WXYNewViewController.m */,
+			);
+			path = new;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -690,6 +716,7 @@
 			files = (
 				184713AF1873042300A72F4B /* Reachability.m in Sources */,
 				184713B01873042300A72F4B /* NSDictionary+noNilValueForKey.m in Sources */,
+				189035F61874848600FA2CB3 /* WXYNewViewController.m in Sources */,
 				189035DD187438F700FA2CB3 /* WXYRegisterViewController.m in Sources */,
 				18471328187303DC00A72F4B /* main.m in Sources */,
 				189035D61874342600FA2CB3 /* Notice.m in Sources */,
@@ -719,6 +746,7 @@
 				184713A71873042300A72F4B /* NSData+MKBase64.m in Sources */,
 				184713A01873042300A72F4B /* WXYDataModel.m in Sources */,
 				184713A91873042300A72F4B /* NSDictionary+RequestEncoding.m in Sources */,
+				189035F218747EE400FA2CB3 /* WXYPostViewController.m in Sources */,
 				184713A61873042300A72F4B /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				184713AE1873042300A72F4B /* MKNetworkOperation.m in Sources */,
 				1847139E1873042300A72F4B /* UserInfo.m in Sources */,

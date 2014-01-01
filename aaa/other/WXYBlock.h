@@ -19,4 +19,7 @@ typedef void (^OperationSucceedBlock)(MKNetworkOperation *completedOperation);
 typedef void (^OperationErrorBlock)(MKNetworkOperation *completedOperation, NSError *error);
 typedef void (^ArrayBlock)(NSArray *resultArray);
 typedef void (^ActivityShopBlock)(ActivityShopEntity *result);
+
+
+typedef void (^PostBlock)(NSString* content, VoidBlock succeedBlock, ErrorBlock errorBlock);
 #endif

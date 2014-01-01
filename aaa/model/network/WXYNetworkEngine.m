@@ -74,7 +74,7 @@
 {
     MKNetworkOperation* op = nil;
     NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
-    if (fLogin)
+    if (fLogin && SHARE_SETTING_MANAGER.isLogin)
     {
         [params setObject:SHARE_SETTING_MANAGER.currentUserInfo.userName forKey:@"user_name"];
         [params setObject:SHARE_SETTING_MANAGER.currentUserInfo.password forKey:@"password"];
