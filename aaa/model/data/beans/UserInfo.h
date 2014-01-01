@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString* headPhotoUrl;
 @property (strong, nonatomic) NSString* coverUrl;
 @property (strong, nonatomic) NSString* location;
+@property (strong, nonatomic) NSString* screenName;
 
 - (NSDictionary*)toDict;
 - (id)initWithDict:(NSDictionary*)dict;

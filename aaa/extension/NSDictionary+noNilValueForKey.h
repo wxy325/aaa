@@ -10,4 +10,5 @@
 
 @interface NSDictionary (noNilValueForKey)
 - (id)noNilValueForKey:(NSString*)key;
+- (void)setNoNilValue:(id)value forKey:(NSString*)key;
 @end

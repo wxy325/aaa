@@ -13,7 +13,7 @@
 #import "NSDictionary+noNilValueForKey.h"
 
 //#define HOST_NAME @"10.60.42.200:12357/YimoERP"
-#define HOST_NAME @"192.168.1.100/hanjie"
+
 #define URL_USER_LOGIN @"user_login.php"
 #define URL_USER_REGISTER @"user_register.php"
 #define URL_USER_INFO_UPDATE @"user_info_update.php"
@@ -110,11 +110,30 @@
 - (MKNetworkOperation*)userLoginWithName:(NSString*)name password:(NSString*)passwd onSucceed:(VoidBlock)succeedBlock onError:(ErrorBlock)errorBlock
 {
     MKNetworkOperation* op = nil;
-    op = [self startOperationWithPath:URL_USER_LOGIN needLogin:NO paramers:@{@"user_name":name, @"password":passwd}onSucceeded:^(MKNetworkOperation *completedOperation) {
+    op = [self startOperationWithPath:URL_USER_LOGIN needLogin:NO paramers:@{@"user_name":name, @"password":passwd}onSucceeded:^(MKNetworkOperation *completedOperation)
+    {
+        UserInfo* userInfo = [[UserInfo alloc] init];
+        userInfo.userName = name;
+        userInfo.password = passwd;
+        SHARE_SETTING_MANAGER.currentUserInfo = userInfo;
+        
         if (succeedBlock)
         {
             succeedBlock();
         }
+        
+//        [self userGetInfoOnSucceed:^{
+//            if (succeedBlock)
+//            {
+//                
+//            }
+//        } onError:^(NSError *error) {
+//            if (errorBlock)
+//            {
+//                errorBlock(error);
+//            }
+//        }];
+        
     } onError:^(MKNetworkOperation *completedOperation, NSError *error) {
         if (errorBlock)
         {
@@ -188,6 +207,15 @@
     MKNetworkOperation* op = nil;
     
     op = [self startOperationWithPath:URL_USER_GET_INFO needLogin:YES paramers:@{} onSucceeded:^(MKNetworkOperation *completedOperation) {
+        NSDictionary* dict = completedOperation.responseJSON;
+
+        UserInfo* userInfo = SHARE_SETTING_MANAGER.currentUserInfo;
+        
+        userInfo.location = [NSString stringWithFormat:@"%@ %@",[dict noNilValueForKey:@"province"], [dict noNilValueForKey:@"city"]];
+        userInfo.screenName = [dict noNilValueForKey:@"screen_name"];
+        userInfo.coverUrl = [dict noNilValueForKey:@"cover_image_url"];
+        userInfo.headPhotoUrl = [dict noNilValueForKey:@"head_photo_url"];
+        SHARE_SETTING_MANAGER.currentUserInfo = userInfo;
         if (succeedBlock)
         {
             succeedBlock();

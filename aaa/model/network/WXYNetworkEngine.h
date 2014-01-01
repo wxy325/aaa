@@ -9,6 +9,8 @@
 #import "MKNetworkEngine.h"
 #import "WXYBlock.h"
 #import "WXYDataModel.h"
+#define HOST_NAME @"192.168.1.100/hanjie"
+
 
 #define SHARE_NW_ENGINE [WXYNetworkEngine shareNetworkEngine]
 

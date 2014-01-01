@@ -7,12 +7,7 @@
 //
 
 #import "UserInfo.h"
-#import "BrandInfo.h"
-#import "ShopInfo.h"
-#import "LocationInfo.h"
-#import "ActivityInfo.h"
-#import "ActivityShopEntity.h"
-#import "PhotoEntity.h"
+
 
 #import <Foundation/Foundation.h>
 

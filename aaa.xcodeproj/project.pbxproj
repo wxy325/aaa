@@ -20,12 +20,6 @@
 		1847133D187303DD00A72F4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1847131F187303DC00A72F4B /* UIKit.framework */; };
 		18471345187303DD00A72F4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18471343187303DD00A72F4B /* InfoPlist.strings */; };
 		18471347187303DD00A72F4B /* aaaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18471346187303DD00A72F4B /* aaaTests.m */; };
-		184713981873042300A72F4B /* ActivityInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713551873042300A72F4B /* ActivityInfo.m */; };
-		184713991873042300A72F4B /* ActivityShopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713571873042300A72F4B /* ActivityShopEntity.m */; };
-		1847139A1873042300A72F4B /* BrandInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713591873042300A72F4B /* BrandInfo.m */; };
-		1847139B1873042300A72F4B /* LocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847135B1873042300A72F4B /* LocationInfo.m */; };
-		1847139C1873042300A72F4B /* PhotoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847135D1873042300A72F4B /* PhotoEntity.m */; };
-		1847139D1873042300A72F4B /* ShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847135F1873042300A72F4B /* ShopInfo.m */; };
 		1847139E1873042300A72F4B /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713611873042300A72F4B /* UserInfo.m */; };
 		1847139F1873042300A72F4B /* WXYSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713641873042300A72F4B /* WXYSettingManager.m */; };
 		184713A01873042300A72F4B /* WXYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 184713661873042300A72F4B /* WXYDataModel.m */; };
@@ -96,18 +90,6 @@
 		18471342187303DD00A72F4B /* aaaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "aaaTests-Info.plist"; sourceTree = "<group>"; };
 		18471344187303DD00A72F4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18471346187303DD00A72F4B /* aaaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aaaTests.m; sourceTree = "<group>"; };
-		184713541873042300A72F4B /* ActivityInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityInfo.h; sourceTree = "<group>"; };
-		184713551873042300A72F4B /* ActivityInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityInfo.m; sourceTree = "<group>"; };
-		184713561873042300A72F4B /* ActivityShopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityShopEntity.h; sourceTree = "<group>"; };
-		184713571873042300A72F4B /* ActivityShopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityShopEntity.m; sourceTree = "<group>"; };
-		184713581873042300A72F4B /* BrandInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandInfo.h; sourceTree = "<group>"; };
-		184713591873042300A72F4B /* BrandInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandInfo.m; sourceTree = "<group>"; };
-		1847135A1873042300A72F4B /* LocationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInfo.h; sourceTree = "<group>"; };
-		1847135B1873042300A72F4B /* LocationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfo.m; sourceTree = "<group>"; };
-		1847135C1873042300A72F4B /* PhotoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEntity.h; sourceTree = "<group>"; };
-		1847135D1873042300A72F4B /* PhotoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEntity.m; sourceTree = "<group>"; };
-		1847135E1873042300A72F4B /* ShopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfo.h; sourceTree = "<group>"; };
-		1847135F1873042300A72F4B /* ShopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfo.m; sourceTree = "<group>"; };
 		184713601873042300A72F4B /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		184713611873042300A72F4B /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		184713631873042300A72F4B /* WXYSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXYSettingManager.h; sourceTree = "<group>"; };
@@ -300,18 +282,6 @@
 		184713531873042300A72F4B /* beans */ = {
 			isa = PBXGroup;
 			children = (
-				184713541873042300A72F4B /* ActivityInfo.h */,
-				184713551873042300A72F4B /* ActivityInfo.m */,
-				184713561873042300A72F4B /* ActivityShopEntity.h */,
-				184713571873042300A72F4B /* ActivityShopEntity.m */,
-				184713581873042300A72F4B /* BrandInfo.h */,
-				184713591873042300A72F4B /* BrandInfo.m */,
-				1847135A1873042300A72F4B /* LocationInfo.h */,
-				1847135B1873042300A72F4B /* LocationInfo.m */,
-				1847135C1873042300A72F4B /* PhotoEntity.h */,
-				1847135D1873042300A72F4B /* PhotoEntity.m */,
-				1847135E1873042300A72F4B /* ShopInfo.h */,
-				1847135F1873042300A72F4B /* ShopInfo.m */,
 				184713601873042300A72F4B /* UserInfo.h */,
 				184713611873042300A72F4B /* UserInfo.m */,
 			);
@@ -652,9 +622,7 @@
 				184713AF1873042300A72F4B /* Reachability.m in Sources */,
 				184713B01873042300A72F4B /* NSDictionary+noNilValueForKey.m in Sources */,
 				18471328187303DC00A72F4B /* main.m in Sources */,
-				1847139A1873042300A72F4B /* BrandInfo.m in Sources */,
 				184713E718731DEF00A72F4B /* WXYCardCommentView.m in Sources */,
-				1847139D1873042300A72F4B /* ShopInfo.m in Sources */,
 				184713A21873042300A72F4B /* WXYNetworkEngine.m in Sources */,
 				184713D818731B7400A72F4B /* WXYHomeCoverView.m in Sources */,
 				184713AD1873042300A72F4B /* MKNetworkEngine.m in Sources */,
@@ -662,10 +630,8 @@
 				184713A81873042300A72F4B /* NSDate+RFC1123.m in Sources */,
 				184713D0187311C300A72F4B /* WXYViewController.m in Sources */,
 				184713DD18731DAF00A72F4B /* WXYCardTextCell.m in Sources */,
-				184713991873042300A72F4B /* ActivityShopEntity.m in Sources */,
 				1847139F1873042300A72F4B /* WXYSettingManager.m in Sources */,
 				184713AA1873042300A72F4B /* NSString+MKNetworkKitAdditions.m in Sources */,
-				184713981873042300A72F4B /* ActivityInfo.m in Sources */,
 				1847132C187303DC00A72F4B /* WXYAppDelegate.m in Sources */,
 				184713B11873042300A72F4B /* UIViewController+ShowHud.m in Sources */,
 				184713A31873042300A72F4B /* WXYNetworkOperation.m in Sources */,
@@ -674,12 +640,10 @@
 				184713D3187311CC00A72F4B /* WXYNoticeViewController.m in Sources */,
 				184713A71873042300A72F4B /* NSData+MKBase64.m in Sources */,
 				184713A01873042300A72F4B /* WXYDataModel.m in Sources */,
-				1847139B1873042300A72F4B /* LocationInfo.m in Sources */,
 				184713A91873042300A72F4B /* NSDictionary+RequestEncoding.m in Sources */,
 				184713A61873042300A72F4B /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				184713AE1873042300A72F4B /* MKNetworkOperation.m in Sources */,
 				1847139E1873042300A72F4B /* UserInfo.m in Sources */,
-				1847139C1873042300A72F4B /* PhotoEntity.m in Sources */,
 				184713A51873042300A72F4B /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

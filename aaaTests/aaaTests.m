@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <GHUnitIOS/GHAsyncTestCase.h>
 #import "WXYNetworkEngine.h"
+#import "WXYSettingManager.h"
 @interface aaaTests : XCTestCase
 
 @property (strong, nonatomic) GHAsyncTestCase* asyncTestCase;
@@ -44,5 +45,22 @@
     }];
     
     [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
-    }
+}
+
+- (void)testIsLogin
+{
+    UserInfo* userInfo = SHARE_SETTING_MANAGER.currentUserInfo;
+    
+    XCTAssert(SHARE_SETTING_MANAGER.isLogin, @"未登陆");
+}
+
+- (void)testGetUesrInfo
+{
+    [self.engine userGetInfoOnSucceed:^{
+        [self.asyncTestCase notify:kGHUnitWaitStatusSuccess];
+    } onError:^(NSError *error) {
+        [self.asyncTestCase notify:kGHUnitWaitStatusFailure];
+    }];
+    [self.asyncTestCase waitForStatus:kGHUnitWaitStatusSuccess timeout:kMKNetworkKitRequestTimeOutInSeconds];
+}
 @end

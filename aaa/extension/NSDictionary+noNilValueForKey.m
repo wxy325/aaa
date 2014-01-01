@@ -20,5 +20,13 @@
     }
     return value;
 }
+- (void)setNoNilValue:(id)value forKey:(NSString*)key;
+{
+    if (value)
+    {
+//        value = [NSNull null];
+        [self setValue:value forKey:key];
+    }
 
+}
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "UserInfo.h"
+#import "NSDictionary+noNilValueForKey.h"
 
 @implementation UserInfo
 
@@ -50,7 +51,16 @@
 #pragma mark - Dict
 - (NSDictionary*)toDict
 {
-    NSDictionary* dict = @{@"userName":self.userName, @"password":self.password, @"headPhotoUrl":self.headPhotoUrl, @"coverUrl":self.coverUrl, @"location":self.location};
+
+    
+    NSMutableDictionary* dict = [@{} mutableCopy];
+    [dict setNoNilValue:self.userName forKey:@"userName"];
+    [dict setNoNilValue:self.password forKey:@"password"];
+    [dict setNoNilValue:self.headPhotoUrl forKey:@"headPhotoUrl"];
+    [dict setNoNilValue:self.coverUrl forKey:@"coverUrl"];
+    [dict setNoNilValue:self.location forKey:@"location"];
+    [dict setNoNilValue:self.screenName forKey:@"screenName"];
+    //@{@"userName":self.userName, @"password":self.password, @"headPhotoUrl":self.headPhotoUrl, @"coverUrl":self.coverUrl, @"location":self.location};
     return dict;
 }
 - (id)initWithDict:(NSDictionary*)dict
@@ -63,6 +73,7 @@
         self.headPhotoUrl = dict[@"headPhotoUrl"];
         self.coverUrl = dict[@"coverUrl"];
         self.location = dict[@"location"];
+        self.screenName = dict[@"screenName"];
     }
     return self;
 }
